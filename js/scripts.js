@@ -5,10 +5,10 @@ const filterGallery = function() {
   const $photos = $('#gallery a');
 
   $input.on("keyup", function() {
-    const searchTerm = $(this).val();
+    const searchTerm = $(this).val().toLowerCase();
 
     $photos.each(function() {
-      if ($(this).attr('title').indexOf(searchTerm) === -1) {
+      if ($(this).attr('title').toLowerCase().indexOf(searchTerm) === -1) {
           $(this).parent().hide();
       } else {
         $(this).parent().show();
